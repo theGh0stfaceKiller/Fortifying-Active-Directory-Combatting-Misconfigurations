@@ -1,1 +1,6 @@
-
+   ```powershell
+     certutil -setreg ca\csp\CNGHashAlgorithm SHA256
+     certutil -setreg ca\csp\CNGEncryptionAlgorithm RSA
+     net stop certsvc
+     net start certsvc
+     ```
