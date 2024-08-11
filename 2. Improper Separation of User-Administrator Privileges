@@ -1,1 +1,19 @@
+#### **Discuss the Principle of Least Privilege in AD**
+
+- **Audit**: List users with admin privileges.
+
+	```powershell
+	# Identify users in privileged AD groups
+	Get-ADGroupMember -Identity "Domain Admins"
+	Get-ADGroupMember -Identity "Enterprise Admins"
+	```
+
+#### **Common Pitfalls in Privilege Assignments**
+
+- **Validation**: Check for over-privileged accounts.
+
+	```powershell
+	# Detect users with unexpected administrative privileges
+	Get-ADUser -Filter {AdminCount -eq 1} -Properties MemberOf
+	```
 
