@@ -1,1 +1,23 @@
 
+#### **Explaining ACLs in AD**
+**Audit**: List ACLs on network shares.
+```powershell
+# Get ACLs for shared folders
+Get-SmbShare | ForEach-Object { Get-Acl $_.Path }
+```
+
+#### **Best Practices for Configuring ACLs**
+**Validation**: Ensure ACL compliance.
+```powershell
+# Validate that ACLs meet security policies
+Get-Acl -Path "C:\Path\To\SharedFolder" | Format-List
+```
+
+#### **Tools to Audit and Manage ACLs Efficiently**
+**Audit**: Use tools to review and manage ACLs.
+```powershell
+# Review ACLs using AccessEnum
+AccessEnum.exe /s /c /f /d "C:\Path\To\SharedFolder"
+```
+
+---
