@@ -1,1 +1,16 @@
 
+#### **Common Methods Used to Bypass AD Controls**
+**Validation**: Test for common bypass methods.
+```powershell
+# Attempt to add a user to an AD group without proper permissions
+Add-ADGroupMember -Identity "Domain Admins" -Members "MaliciousUser" -WhatIf
+```
+
+#### **Security Measures to Reinforce Access Controls**
+**Audit**: Review access control configurations.
+```powershell
+# Check ACLs for critical AD objects
+Get-Acl "AD:\CN=AdminSDHolder,CN=System,DC=domain,DC=com"
+```
+
+---
