@@ -1,1 +1,29 @@
 
+#### **Role of Network Segmentation in Protecting AD**
+
+- **Audit**: Verify network segmentation.
+
+	```powershell
+	# Identify current network segments and their associated AD objects
+	Get-ADSiteLink -Filter *
+	```
+
+#### **Strategies for Segmenting AD Controlled Networks**
+
+- **Validation**: Test network segmentation effectiveness.
+
+	```bash
+	# Use nmap to verify segmentation
+	nmap -sP 192.168.1.0/24
+	```
+
+#### **Benefits in Preventing Lateral Movement**
+
+- **Audit**: Ensure proper firewall rules.
+
+	```powershell
+	# Check Windows Firewall rules related to segmentation
+	Get-NetFirewallRule -PolicyStore ActiveStore
+	```
+
+---
