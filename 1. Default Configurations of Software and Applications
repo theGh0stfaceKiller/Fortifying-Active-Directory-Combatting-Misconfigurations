@@ -10,22 +10,24 @@ Get-ADDefaultDomainPasswordPolicy
 
 Get-ADDomainController -Filter * | Select-Object Name, DefaultPartition
 
+
+
 Risks Associated with Default Settings
 
 Validation: Identify systems using default configurations.
 	
-
 Check if AD domain controllers use default settings
 
 Get-ADDomainController -Filter * | ForEach-Object {Get-ADDomainControllerSettings -Identity $_.Name}
+
 
 
 Best Practices for Initial AD Setup and Configuration
 
 Audit: Ensure secure baseline configurations.
 
-
 Ensure the AD domain is configured with secure settings
+
 (Get-ADDomain).DomainMode -ge 'Windows2008Domain'
 (Get-ADDomain).ForestMode -ge 'Windows2008Forest'
 
