@@ -1,9 +1,11 @@
 
-     certutil -setreg ca\csp\CNGHashAlgorithm SHA256
+Explanation of Default Configurations in AD Environments
 
-     certutil -setreg ca\csp\CNGEncryptionAlgorithm RSA
+Audit: Use PowerShell to list default configuration settings in AD.
 
-     net stop certsvc
 
-     net start certsvc
-   
+# Check default AD configuration settings
+
+Get-ADDefaultDomainPasswordPolicy
+
+Get-ADDomainController -Filter * | Select-Object Name, DefaultPartition
