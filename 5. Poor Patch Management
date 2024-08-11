@@ -1,1 +1,24 @@
 
+#### **Impact of Outdated AD Systems and Software**
+**Validation**: Identify unpatched systems.
+```powershell
+# Check for missing patches
+Get-WindowsUpdateLog | Select-String "Failed"
+```
+
+#### **Automating Updates and Patch Management Processes**
+**Audit**: Verify automated patch management settings.
+```powershell
+# Ensure WSUS configuration
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"
+```
+
+#### **Ensuring AD Environment Integrity Through Regular Updates**
+**Validation**: Confirm the installation of critical updates.
+```powershell
+# Validate that critical updates have been installed
+Get-WindowsUpdate -Classification Critical
+```
+
+---
+
