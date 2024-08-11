@@ -1,5 +1,4 @@
-
-Explanation of Default Configurations in AD Environments
+## Explanation of Default Configurations in AD Environments
 
 Audit: Use PowerShell to list default configuration settings in AD.
 
