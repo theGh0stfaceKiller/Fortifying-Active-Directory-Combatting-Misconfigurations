@@ -1,1 +1,30 @@
 
+#### **Importance of Monitoring in AD Environments**
+
+- **Audit**: Check current monitoring configurations.
+
+	```powershell
+	# Ensure that auditing policies are enabled
+	Get-ADObject -Filter {ObjectClass -eq "AuditPolicy"}
+	```
+
+#### **Tools and Techniques for Effective AD Monitoring**
+
+- **Validation**: Implement and test monitoring tools.
+
+	```bash
+	# Use Sysmon for detailed monitoring
+	sysmon -accepteula -i sysmonconfig.xml
+	
+	# Configure Windows Event Forwarding
+	wefutil.exe ss /c:source-computer /n:collector-computer
+	```
+
+#### **Identifying Signs of Compromise Through Monitoring**
+
+- **Audit**: Review logs for anomalies.
+
+	```powershell
+	# Analyze Security Event Logs for suspicious activities
+	Get-WinEvent -LogName Security | Where-Object { $_.Id -in 4625, 4769, 4771 }
+	```
